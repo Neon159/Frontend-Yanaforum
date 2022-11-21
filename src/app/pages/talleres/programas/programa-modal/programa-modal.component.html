@@ -1,0 +1,30 @@
+<div class="modal-header">
+  <h4 class="modal-title" id="modal-title">{{title}} Programa</h4>
+  <button (click)="activeModal.dismiss()" type="button" class="close"
+          aria-label="Close button" aria-describedby="modal-title">
+    <span aria-hidden="true">x</span>
+  </button>
+</div>
+<div class="modal-body">
+  <form [formGroup]="formPrograma">
+    <div class="form-group row">
+      <label class="col-sm-3 col-form-label">Nombre</label>
+      <div class="col-sm-9">
+        <input formControlName="progNombre" type="text"  class="form-control" placeholder="Ingrese nombre">
+      </div>
+    </div>
+    <div class="form-group row">
+      <label class="col-sm-3 col-form-label">Descripción</label>
+      <div class="col-sm-9">
+        <input formControlName="progDescripcion" type="text" class="form-control" placeholder="Ingrese descripción">
+      </div>
+    </div>
+  </form>
+</div>
+<div class="modal-footer">
+  <button type="button" [disabled]="formPrograma.invalid" *ngIf="title=='Nuevo'" class="btn btn-primary" (click)="save()">Guardar</button>
+  <button type="button" [disabled]="formPrograma.invalid" *ngIf="title=='Modificar'" class="btn btn-primary" (click)="update()">Guardar</button>
+  <button type="button" class="btn btn-outline-secondary"
+          (click)="activeModal.dismiss('Cerrar modal')">Cancelar</button>
+</div>
+<pre>{{formPrograma.value | json}}</pre>

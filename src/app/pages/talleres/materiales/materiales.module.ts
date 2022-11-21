@@ -4,7 +4,7 @@ import { MaterialesComponent } from './materiales.component';
 import {MaterialesRoutingModule} from "./materiales-routing.module";
 import { MaterialModalComponent } from './material-modal/material-modal.component';
 import {ReactiveFormsModule} from "@angular/forms";
-import {PersonaService} from "../../../providers/services/persona.service";
+import {MaterialesService} from "../../../providers/services/materiales.service";
 
 
 
@@ -19,7 +19,8 @@ import {PersonaService} from "../../../providers/services/persona.service";
     ReactiveFormsModule
   ],
   providers: [
-    PersonaService
+    MaterialesService
+
   ]
 })
 export class MaterialesModule { }

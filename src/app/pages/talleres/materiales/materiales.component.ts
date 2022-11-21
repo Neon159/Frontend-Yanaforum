@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import {PersonaService} from "../../../providers/services/persona.service";
 import {NgbModal} from "@ng-bootstrap/ng-bootstrap";
-import {PersonaModalComponent} from "../personas/persona-modal/persona-modal.component";
 import Swal from "sweetalert2";
 import {MaterialModalComponent} from "./material-modal/material-modal.component";
+import {MaterialesService} from "../../../providers/services/materiales.service";
 
 @Component({
   selector: 'app-materiales',
@@ -13,7 +12,7 @@ import {MaterialModalComponent} from "./material-modal/material-modal.component"
 export class MaterialesComponent implements OnInit {
 
   materiales: any = [];
-  constructor(private materialService: PersonaService,
+  constructor(private materialService: MaterialesService,
               private modalService: NgbModal) { }
 
   ngOnInit(): void {
